@@ -15,3 +15,9 @@ jobs:
     steps:
       - name: welcome steps
         run: echo "CI Pipeline for this Repo"
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Lint HTML Files
+        run: npx htmlhint "**/*.html"
+      - name: Lint CSS Files
+        run: npx stylelint "**/*.css"
